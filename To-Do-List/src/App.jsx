@@ -61,7 +61,6 @@ const App = () => {
   return (
     <>
       <Main />
-      {/* <Task/> */}
       <div>
         {todo.map((item) => (
           <Lists
