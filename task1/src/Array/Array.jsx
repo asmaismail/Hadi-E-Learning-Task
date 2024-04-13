@@ -1,6 +1,7 @@
 import React from "react";
 
 const Array = ({ data }) => {
+  
   return (
     <>
       <div
@@ -12,9 +13,12 @@ const Array = ({ data }) => {
         }}
       >
         {data.map((item) => (
-          <div key={item.id}>
-
-            Color={item.color} value={item.value}
+          <div
+            key={item.id} style={{backgroundColor: item.value, padding:"5px"}}
+            className="flex flex-row justify-between gap-x-11 "
+          >
+            <p className="font-bold text-lg"> Color={item.color}</p>
+            {/* value={item.value} */}
           </div>
         ))}
       </div>
