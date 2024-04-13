@@ -11,7 +11,7 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-  span{
+   span{
     flex-direction: row;
   }
   .heading{
@@ -29,7 +29,7 @@ body {
     border-radius: 5px;
     border-color: black;
   }
-  .list{
+  /* .list{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,5 +37,5 @@ body {
     width: 200px;
     background-color: aqua;
     color: black;
-  }
+  }  */
 
