@@ -1,16 +1,14 @@
-
-
+import React, { useState } from 'react'
 const Theme = () => {
-    const [darkTheme, setDarkTheme] = useState(false);
-
-const toggleTheme = () => {
-  setDarkTheme(!darkTheme);
-  document.body.className.backgroundColor = darkTheme ? "dark" : "light"; 
-};
-
-
+    const [theme, setTheme] = useState()
+    const themehandler =() =>{
+        setTheme(e.target.theme)
+        localStorage.setItem('value', e.target.theme)
+    }
   return (
-    Theme, toggleTheme
+    <>
+    
+    </>
   )
 }
 
