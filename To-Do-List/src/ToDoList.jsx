@@ -2,46 +2,16 @@ import React, { useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { FaRegPenToSquare } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
+import './index.css'
 
-
-const ToDoList = () => {
-  const myDate = new Date();
-  const handleToggleCompletion = (id) => {
-    setTasks(
-      tasks.map((tasks) =>
-        tasks.id === id ? { ...tasks, completed: !tasks.completed } : tasks
-      )
-    );
+const ToDoList = ({todolist, indexNumber, todolists, setTodolist}) => {
+    const handleDelete = (index) => {
+       setTodolist(todolist.filter((task) => task.index !== index));
   };
-
-
-  const [tasks, setTasks] = useState([
-    {
-        id:1,
-      name: "name1",
-      detail: "deatil1",
-            completed: false,
-
-    },
-    {
-        id:2,
-        name: "name2",
-        detail: "deatil2",
-              completed: false,
-
-      },{
-        id:3,
-        name: "name3",
-        detail: "deatil3",
-              completed: false,
-
-      },
-  ]);
-  const taskDone = (id) =>{
+  const [done, setDone] = useState(false);
+  const handleToggleCompletion =() =>{
+    setDone(!done);
   }
-  const handleDelete = (id) => {
-       setTasks(tasks.filter((item) => item.id !== id));
-  };
   return (
     <>
       <div
@@ -61,9 +31,10 @@ const ToDoList = () => {
             padding: "10px",
           }}
         >
-          {tasks.map((tasks, id) => (
-            <div
-              key={id}
+           {todolist.map((task, index) => (
+
+            <div   className={`${done ? 'taskdone' : ''}`}
+              key={index}
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -72,13 +43,16 @@ const ToDoList = () => {
                 borderRadius:'10px',
                 padding:'15px',
                 marginTop:'20px'
-              }}
-            >
+                
+              }} 
+              onClick={() => handleToggleCompletion(index)} 
+
+             > 
+             {task}
+             {index}
+        
               <div style={{ marginLeft: "0%" }}>
                 <div style={{ marginTop: "0" }}>
-                  {tasks.name}
-
-                  {tasks.detail}
                 </div>
               </div>
               <div
@@ -93,8 +67,12 @@ const ToDoList = () => {
                 <FaRegPenToSquare
                   style={{ color: "black", marginRight: "10px" }}
                 />
-                <TiTick onClick={() => handleToggleCompletion(tasks.id)} style={{marginRight:'10px'}}/>
-                <MdDelete onClick={()=> handleDelete()} style={{ color: "red" }} />
+                <TiTick 
+                // onClick={() => handleToggleCompletion()}
+                 style={{marginRight:'10px'}}/>
+                <MdDelete
+                 onClick={()=> handleDelete()}
+                 style={{ color: "red" }} />
               </div>
             </div>
           ))}
@@ -105,3 +83,4 @@ const ToDoList = () => {
 };
 
 export default ToDoList;
+

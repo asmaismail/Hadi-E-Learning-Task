@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 import MyList from "./Assets/pen.gif";
+import ToDoList from "./ToDoList";
 import Plus from "./Assets/Plus.gif";
 import { CiCirclePlus } from "react-icons/ci";
-import { Button, message, Space } from "antd";
 
 const Main = () => {
   const [plus, setPlus] = useState(true);
   const handleClick = () => {
     setPlus(!plus);
   };
-  const [messageApi, contextHolder] = message.useMessage();
-  const success = () => {
-    messageApi.open({
-      type: "success",
-      content: "Note added successfully!",
-    });
-  };
+
+  const [todolist, setTodolist] = useState([]);
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    const todoname = e.target.todoname.value;
+    if (!todolist.includes(todoname)) {
+      const finaltodo  =[...todolist,todoname]
+      setTodolist(finaltodo)
+    }
+    else{
+      alert("already exist")
+    }
+    e.preventDefault();
   };
   
 
   return (
     <>
-      {contextHolder}
-
       <section>
         <div className="main" style={{ cursor: "pointer" }}>
           <div className="heading">
@@ -46,14 +47,12 @@ const Main = () => {
               alignItems: "center",
             }}
           >
-         <form onSubmit={handleSubmit}>
-         <input required="true" type="text" placeholder="Enter your task here..." />
+         <form onSubmit={handleSubmit} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+         <input required="true" name="todoname" type="text" placeholder="Enter your task here..." />
             <span>
-              <Space>
                 <button type="submit"
                   onClick={() => {
-                    // success();
-                    // handleClick();
+                    handleClick()
                   }}
                   className="border"
                   style={{
@@ -61,19 +60,21 @@ const Main = () => {
                     backgroundColor: "transparent",
                     cursor: "pointer",
                   }}
-                > Add me
-                  {/* {plus ? (
-                    <CiCirclePlus style={{ fontSize: "40px" }} />
+                > 
+                  {plus ? (
+                    <CiCirclePlus size={40} style={{  marginTop:'0px',
+                  }}  />
                   ) : (
-                    <img src={Plus} alt="img" style={{ height: "45px" }} />
-                  )} */}
+                    <img           onMouseLeave={() => setPlus(true)}
+                    src={Plus} alt="img" style={{ height: "45px" }} />
+                  )}
                 </button>
-              </Space>
          </span>
          </form>
           </div>
         </div>
       </section>
+      <ToDoList todolist={todolist}  todolists={todolist} setTodolist={setTodolist} />
     </>
   );
 };
