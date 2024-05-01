@@ -19,6 +19,7 @@ import ContactIcon from "@mui/icons-material/ContactSupport";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import '../assets/style.css'
+import About from "../Pages/About";
 
 
 const drawerWidth = 240;
@@ -72,7 +73,7 @@ function Appbar(props) {
       <List style={{display:'flex',flexDirection:'column', height:'70vh' ,justifyContent:'right', alignItems:'flex-start', marginLeft:'18px'}}>
         <p  onClick={<Link to ='/'/>} style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><HomeIcon style={{color:'gray',}}/> Home</p>
         <p onClick={<Link to ='/about'/>}  style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><InfoIcon style={{color:'gray', }}/> About us</p>
-        <p  style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><ContactIcon style={{color:'gray', }}/> Contact</p>
+        <p  onClick={<link to ='/contact'/>} style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><ContactIcon style={{color:'gray', }}/> Contact</p>
         <p  style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><AccountCircleIcon style={{color:'gray'}}/> Profile</p>
         <p  style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><SettingsIcon style={{color:'gray' }}/> Settings</p>
       </List>
@@ -105,9 +106,7 @@ function Appbar(props) {
       </div>
     </div>
   );
-
-  // Remove this const when copying and pasting into your project.
-  const container =
+ const container =
     window !== undefined ? () => window().document.body : undefined;
 
   return (
@@ -162,7 +161,7 @@ function Appbar(props) {
           onTransitionEnd={handleDrawerTransitionEnd}
           onClose={handleDrawerClose}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -191,8 +190,6 @@ function Appbar(props) {
       <Box
         component="main"
         sx={{
-          // flexGrow: 1,
-          // p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
@@ -201,6 +198,7 @@ function Appbar(props) {
         {/* <Login/> */}
         {/* <Home/> */}
         <Contact />
+        <About/>
         <Footer style={{ textAlign: "center" }} />
       </Box>
     </Box>
@@ -208,10 +206,7 @@ function Appbar(props) {
 }
 
 Appbar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * Remove this when copying and pasting into your project.
-   */
+
   window: PropTypes.func,
 };
 
