@@ -170,7 +170,7 @@ export default function Chart() {
     <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
 
         <ScatterChart 
-          width={1000}
+          width={900}
           height={400}
           series={[
             {

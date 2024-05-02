@@ -1,14 +1,13 @@
 import React from 'react'
 import Chart from '../Components/Chart'
-import Footer from '../Components/Footer'
 
 
 const Home = () => {
   return (
     <>
-    <div>
-        <Chart/>
-        <Footer/>
+    <div className='container ml-5 justify-center items-center mt-5 bg-red-300'>
+        <Chart className='mt-5'/>
+        {/* <Footer/> */}
     </div>
     </>
   )

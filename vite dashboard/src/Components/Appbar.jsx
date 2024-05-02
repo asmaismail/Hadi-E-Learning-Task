@@ -20,6 +20,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import '../assets/style.css'
 import About from "../Pages/About";
+import Home from "../Pages/Home";
 
 
 const drawerWidth = 240;
@@ -73,7 +74,7 @@ function Appbar(props) {
       <List style={{display:'flex',flexDirection:'column', height:'70vh' ,justifyContent:'right', alignItems:'flex-start', marginLeft:'18px'}}>
         <p  onClick={<Link to ='/'/>} style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><HomeIcon style={{color:'gray',}}/> Home</p>
         <p onClick={<Link to ='/about'/>}  style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><InfoIcon style={{color:'gray', }}/> About us</p>
-        <p  onClick={<link to ='/contact'/>} style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><ContactIcon style={{color:'gray', }}/> Contact</p>
+        <p  onClick={<Link to ='/contact'/>} style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><ContactIcon style={{color:'gray', }}/> Contact</p>
         <p  style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><AccountCircleIcon style={{color:'gray'}}/> Profile</p>
         <p  style={{display:'flex',  justifyContent:'center', alignItems:'center', textAlign:'center', gap:'7px'}}><SettingsIcon style={{color:'gray' }}/> Settings</p>
       </List>
@@ -194,11 +195,7 @@ function Appbar(props) {
         }}
       >
         <Toolbar />
-        {/* <NoPage/> */}
-        {/* <Login/> */}
         {/* <Home/> */}
-        <Contact />
-        <About/>
         <Footer style={{ textAlign: "center" }} />
       </Box>
     </Box>
