@@ -53,10 +53,10 @@ import img3 from '.././assets/review1.png'
     <>
     <h2 className="mt-5 justify-center text-center font-bold text-2xl mb-10">Our Feedback</h2>
     
-    <div className="w-auto mr-20 gap-x-16 h-56 bg-yellow-300 ml-40 mb-20 slider-container">
+    <div className="w-auto mr-20 gap-x-16 h-56 ml-40 mb-20 slider-container">
         <Slider {...settings}>
           {data.map((item, index) => (
-            <div key={index} style={{gap:'90px'}} className="bg-pink-400 gap-x-20 w-[20px] h-48 rounded-lg mx-6 bg-slate-50 shadow-gray-300 shadow-xl"> 
+            <div key={index} style={{gap:'90px'}} className="gap-x-20 w-1/4 h-48 rounded-lg mx-6 shadow-gray-300 shadow-xl"> 
                 <img src={item.img} className="rounded-lg h-20 mb-8 mt-3 justify-center items-center content-center ml-14" alt={`Review ${index}`} />
                 <p className="mb-6 text-justify mx-6">{item.detail}</p>
             </div>
