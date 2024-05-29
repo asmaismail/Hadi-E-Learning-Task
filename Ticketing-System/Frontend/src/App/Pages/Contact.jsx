@@ -4,10 +4,22 @@ import  '../../App.css'
 import CustomForm from '../../Reuseables/CustomForm'
 import Button from '../../Reuseables/Button'
 import Cards from '../../Reuseables/Cards'
+import Footer from '../Components/Footer'
+import Breadcrumbs from '../../Reuseables/Breadcrumbs'
+
 
 const Contact = () => {
+  const breadcrumbItems = [
+    {
+      // icon: <HelpCenterOutlined />,
+      title: 'Contact us',
+    },
+  ]
+
   return (
     <>
+              <Breadcrumbs className='mt-10' items={breadcrumbItems}   />
+
     <div className='ml-[65px] w-auto min-h-[100vh]'>
    <div className='responsive'>
     <div className='lg:w-1/2 w-[100%]'>
@@ -29,6 +41,7 @@ const Contact = () => {
      width="100%" height="450" style={{border:'0'}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     </div>
+    <Footer/>
     </>
   )
 }

@@ -5,6 +5,9 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import Breadcrumbs from '../../Reuseables/Breadcrumbs'
+import { HelpCenterOutlined } from '@mui/icons-material';
+import Footer from '../Components/Footer'
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -17,6 +20,12 @@ const Accordion = styled((props) => (
     display: 'none',
   },
 }));
+const breadcrumbItems = [
+  {
+    // icon: <HelpCenterOutlined />,
+    title: 'Help',
+  },
+]
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
@@ -50,6 +59,9 @@ export default function Help() {
   };
 
   return (
+    <>
+      <Breadcrumbs className='mt-10' items={breadcrumbItems}   />
+
     <div className='ml-40 mr-24' >
       <Accordion  expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -91,5 +103,7 @@ export default function Help() {
         </AccordionDetails>
       </Accordion>
     </div>
+    <Footer/>
+    </>
   );
 }

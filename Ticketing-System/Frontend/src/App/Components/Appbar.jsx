@@ -21,6 +21,12 @@ import ListItemText from "@mui/material/ListItemText";
 import { paths } from "../../helpers/paths";
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRouting from "../AppRouting";
+import { LuContact2 } from "react-icons/lu";
+import { IoSettingsOutline } from "react-icons/io5";
+import { IoHelpSharp } from "react-icons/io5";
+import { FaCcMastercard } from "react-icons/fa6";
+import { MdInfoOutline } from "react-icons/md";
+
 
 const drawerWidth = 240;
 
@@ -105,7 +111,7 @@ export default function Appbar() {
     <>
     {/* <Router> */}
 
-    <Box sx={{ display: "flex" }}>
+    <Box className='bg=[#4c1d95]' sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -147,15 +153,15 @@ export default function Appbar() {
         <List>
           {[
             { name: "Dashboard", path: paths.Landing, icon: <CiHome/>},
-            { name: "Buy Tickets", path: paths.BuyTickets, icon: <CiHome/> },
-            { name: "About Us", path: paths.About,icon: <CiHome/> },
-            { name: "Contact Us", path: paths.Contact, icon: <CiHome /> },
-            { name: "Settings", path: paths.Settings, icon: <CiHome /> },
-            { name: "Help", path: paths.Help, icon: <CiHome /> },
+            { name: "Buy Tickets", path: paths.BuyTickets, icon: <FaCcMastercard /> },
+            { name: "About Us", path: paths.About,icon: <MdInfoOutline /> },
+            { name: "Contact Us", path: paths.Contact, icon: <LuContact2 /> },
+            { name: "Settings", path: paths.Settings, icon: <IoSettingsOutline /> },
+            { name: "Help", path: paths.Help, icon: <IoHelpSharp /> },
           ].map((item, index) => (
             <ListItem key={index} disablePadding>
               <ListItemButton component={Link} to={item.path} sx={{ minHeight: 48, justifyContent: open ? "initial" : "center", px: 2.5 }}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemIcon className="flex justify-center ">{item.icon}</ListItemIcon>
                 <ListItemText primary={item.name} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>

@@ -3,10 +3,21 @@ import  '../../App.css'
 import img from '../../assets/about.png'
 import CounterUp from '../../Reuseables/CounterUp'
 import Carusel from '../../Reuseables/Carusel'
+import Breadcrumbs from '../../Reuseables/Breadcrumbs'
+import Footer from '../Components/Footer'
 
 const About = () => {
+  const breadcrumbItems = [
+    {
+      // icon: <HelpCenterOutlined />,
+      title: 'About us',
+    },
+  ]
+
   return (
     <>
+              <Breadcrumbs className='mt-10' items={breadcrumbItems}   />
+
 <div className='responsive ml-[65px] w-auto'>
   <div className='lg:w-1/2 w-full '>
 <img src={img} alt=''/>
@@ -22,6 +33,7 @@ const About = () => {
 </div>
 <CounterUp/>
 <Carusel/>
+<Footer/>
     </>
 
   )

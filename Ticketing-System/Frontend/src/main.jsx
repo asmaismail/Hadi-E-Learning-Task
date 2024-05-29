@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import AppRouting from './App/AppRouting'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
     {/* <AppRouting> */}

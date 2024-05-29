@@ -15,9 +15,9 @@ import img from '../../assets/logo.png';
 const Footer = () => {
     return (
         <>
-            <div className='w-3/4 ml-40 mx-auto flex lg:flex-row md:flex-row flex-col gap-60 lg:py-5 py-0 -mb-[80px] z-10 relative'>
+            <div className='mt-20 w-3/4 ml-40 mx-auto flex lg:flex-row md:flex-row flex-col gap-60 lg:py-5 py-0 -mb-[80px] z-10 relative'>
             </div> 
-             <div className='w-auto bg-blue-300 ml-[65px] overflow-x-hidden'>
+             <div className='w-auto bg-[#1e3a8a] ml-[65px] overflow-x-hidden'>
              <div className='container mx-5  flex lg:flex-row flex-col hover:cursor-pointer  z-30 mt-5'>
                 <ScrollToTop />
 
@@ -41,7 +41,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='w-full lg:w-1/4 mb-14  mt-10 text-left lg:ml-10 justify-start'>
-                    <h1 className='text-yellow font-bold  text-[25px] mt-12 flex lg:ml-12'>Quick Links</h1>
+                    <h1 className='text-white font-bold  text-[25px] mt-12 flex lg:ml-12'>Quick Links</h1>
 
                     <div className='flex mt-4 text-gray-300 lg:justify-center'>
                         <ul>
@@ -63,7 +63,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className=' w-full lg:w-1/4 mb-14 mt-10  lg:ml-10 text-left justify-start'>
-                    <h1 className='text-yellow font-bold  text-[25px] mt-12 flex lg:mx-5'>Recent Post</h1>
+                    <h1 className='text-white font-bold  text-[25px] mt-12 flex lg:mx-5'>Recent Post</h1>
                     <div className='flex flex-row lg:justify-center mt-4'>
                         <div>
                         </div>
@@ -89,7 +89,7 @@ const Footer = () => {
 
                 </div>
                 <div className='w-full lg:w-1/4  mb-14 mt-10 lg:ml-16 text-left justify-start'>
-                    <h1 className='text-yellow font-bold  text-[25px] mt-12 flex'>Contact us</h1>
+                    <h1 className='text-white font-bold  text-[25px] mt-12 flex'>Contact us</h1>
                     <div className='flex mt-4'>
                         <ul>
                             <li className='text-gray-300 text-[20px]  hover:text-yellow'><TfiHeadphoneAlt /></li>
